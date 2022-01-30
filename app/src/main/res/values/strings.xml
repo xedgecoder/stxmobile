@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">STxMobile</string>
+
+    <string name="Auto">$STALK,86,01,01,FE*4C</string>
+    <string name="Standby">$STALK,86,01,02,FD*4E</string>
+    <string name="minus1">$STALK,86,11,05,FA*4D</string>
+    <string name="minus10">$STALK,86,11,06,F9*36</string>
+    <string name="plus1">$STALK,86,11,07,F8*36</string>
+    <string name="plus10">$STALK,86,11,08,F7*36</string>
+    <string name="tackPort">$STALK,86,11,21,DE*4D</string>
+    <string name="tackStarboard">$STALK,86,11,22,DD*4F</string>
+    <string name="enterTrackMode">$STALK,86,11,28,D7*36</string>
+</resources>

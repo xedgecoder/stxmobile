@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/Compax/app/src/main/res/drawable/my_btn_toggle.xml" value="0.3984375" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/Compax/app/src/main/res/drawable/rectangle.xml" value="0.3984375" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/Compax/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/my_btn_toggle.xml" value="0.2230769230769231" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/ocalbutton.xml" value="0.2230769230769231" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/ovalbutton.xml" value="0.30427350427350425" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/rectangle.xml" value="0.2230769230769231" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/rounded_corner.xml" value="0.22606837606837607" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/roundedbutton.xml" value="0.2230769230769231" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/drawable/status_off.xml" value="0.22606837606837607" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/activity_main.xml" value="0.2329059829059829" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/activity_main2.xml" value="0.29102564102564105" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/activity_setting.xml" value="0.22" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/activity_settings.xml" value="0.25" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/app_bar_main.xml" value="0.20170940170940171" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/content_main.xml" value="0.20170940170940171" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/layout/nav_header_main.xml" value="0.20170940170940171" />
+        <entry key="..\:/Users/MB3743/OneDrive - Zebra Technologies/Documents/Files/dev/androidstudio/compax/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

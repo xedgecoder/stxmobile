@@ -1,0 +1,16 @@
+{
+  "server_settings": [
+    {
+      "key": "serverIP",
+      "value": "192.168.4.1"
+    },
+    {
+      "key": "serverTxPort",
+      "value": "1457"
+    },
+    {
+      "key": "serverRxPort",
+      "value": "1456"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_compass"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#34454c"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp">
+
+
+        <ImageView
+            android:id="@+id/img_compass"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.24"
+            app:srcCompat="@drawable/rc1" />
+
+        <ImageView
+            android:id="@+id/img_dial"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:srcCompat="@drawable/dial2" />
+
+        <ImageView
+            android:id="@+id/bearing"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:srcCompat="@drawable/bearing" />
+
+        <TextView
+            android:id="@+id/txt_azimuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="360° N"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="@id/img_compass"
+            app:layout_constraintStart_toStartOf="@id/img_compass"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:layout_constraintVertical_bias="0.51" />
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/status_off"
+
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="standby"
+            android:textColor="#E3E2E2"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="@id/img_compass"
+            app:layout_constraintStart_toStartOf="@id/img_compass"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:layout_constraintVertical_bias="0.40" />
+
+
+        <ImageView
+            android:id="@+id/displayBgImageView"
+            android:layout_width="408dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="4dp"
+            android:background="#C8C7C7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectangle" />
+
+        <TextView
+            android:id="@+id/displayTextView"
+            android:layout_width="365dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="10dp"
+            android:background="#798563"
+            android:paddingLeft="5dp"
+            android:singleLine="false"
+            android:text="Raymarine ST2000+ Remote Control\nver. 0.1\nAuthor: Marco Basile"
+            android:textColor="#191717"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/followOffBtn"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/tracking_off"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
+            android:id="@+id/followBtn"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/tracking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+
+        <ImageButton
+            android:id="@+id/tackOff"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/tack_off"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/followBtn" />
+
+
+        <ImageButton
+            android:id="@+id/tack"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/tack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/followBtn" />
+
+
+        <ImageButton
+            android:id="@+id/autoBtn"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/auto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tack" />
+
+        <ImageView
+            android:id="@+id/miniCompassImageView"
+            android:layout_width="44dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="14dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="@id/img_compass"
+            app:layout_constraintStart_toStartOf="@id/img_compass"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:layout_constraintVertical_bias="0.63"
+            app:srcCompat="@drawable/minicompass" />
+
+        <TextView
+            android:id="@+id/bearingTextView"
+            android:layout_width="92dp"
+            android:layout_height="54dp"
+            android:text="Bearing\n59°"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/miniCompassImageView" />
+
+        <ImageView
+            android:id="@+id/distanceImageView"
+            android:layout_width="65dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="14dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="@id/img_compass"
+            app:layout_constraintStart_toStartOf="@id/img_compass"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:layout_constraintVertical_bias="0.63"
+            app:srcCompat="@drawable/distance" />
+
+        <TextView
+            android:id="@+id/distanceTextView"
+            android:layout_width="92dp"
+            android:layout_height="54dp"
+            android:text="Distance\n2.3 nm"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/distanceImageView" />
+
+        <ImageButton
+            android:id="@+id/leftOffImageButton"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/left_off"
+            app:layout_constraintEnd_toStartOf="@+id/followBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
+            android:id="@+id/leftTackImageButton"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/left_tack"
+            app:layout_constraintEnd_toStartOf="@+id/followBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
+            android:id="@+id/leftImageButton"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/left"
+            app:layout_constraintEnd_toStartOf="@+id/followBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
+            android:id="@+id/rightOffImageButton"
+            android:layout_width="95dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/right_off"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/followBtn"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
+            android:id="@+id/rightTackImageButton"
+            android:layout_width="95dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/right_tack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/followBtn"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
+            android:id="@+id/rightImageButton"
+            android:layout_width="95dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/followBtn"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="179dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/compax"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="10dp" />
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="47dp"
+            android:layout_height="41dp"
+            android:scaleType="fitXY"
+            android:background="?selectableItemBackgroundBorderless"
+
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_compass"
+            app:layout_constraintEnd_toEndOf="@+id/img_compass"
+            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintStart_toStartOf="@id/img_compass"
+            app:layout_constraintTop_toTopOf="@id/img_compass"
+            app:layout_constraintVertical_bias="0.52"
+            app:srcCompat="@drawable/threedots" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
