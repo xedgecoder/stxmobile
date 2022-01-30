@@ -1,7 +1,7 @@
 
 #  STxMobile
 
-**STxMobile** is a proof of concept of an Android app for remotely controlling the Raymarine[Raymarine ST2000+](https://www.raymarine.com/autopilot/evolution-autopilot/st1000-st2000-tiller-pilots/) tiller pilot from an Android phone. 
+**STxMobile** is a proof of concept of an Android app for remotely controlling the [Raymarine ST2000+](https://www.raymarine.com/autopilot/evolution-autopilot/st1000-st2000-tiller-pilots/) tiller pilot from an Android phone. 
 
 ![](screenshots/mockups.jpg)
 
