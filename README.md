@@ -58,4 +58,8 @@ Click the three dots icon to access the settings page.
 *   [NMEA 0183 Wi-Fi Router YDWR-02](https://www.yachtd.com/products/wifi_0183_router.html)
 
 # Credits
+SeaTalk codes are derived from Thomas Knauf's [work](http://www.thomasknauf.de/rap/seatalk2.htm ).
+
+SeaTalk codes checksum are calculated using the [NMEA Checksum Calculator](https://nmeachecksum.eqth.net/)
+
 Color palette and compass rose based on the beautiful app [Compass ](https://play.google.com/store/apps/details?id=net.androgames.compass&hl=en&gl=US)  made by PixelProse SARL.
