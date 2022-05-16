@@ -33,6 +33,7 @@ public class Bearing implements Observer {
         return miniCompassImageView.isShown();
     }
 
+
     public void setVisibility(int visibility){
         miniCompassImageView.setVisibility(visibility);
         bearingTextView.setVisibility(visibility);
