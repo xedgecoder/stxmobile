@@ -117,10 +117,8 @@ public class MainActivity extends AppCompatActivity{
         ImageButton followBtn =  (ImageButton) findViewById(R.id.followBtn);
         ImageButton followOffBtn =  (ImageButton) findViewById(R.id.followBtn);
         ImageButton autoBtn =  (ImageButton) findViewById(R.id.autoBtn);
-        ImageButton leftOffImageButton = (ImageButton) findViewById(R.id.leftOffImageButton);
         ImageButton leftTackImageButton = (ImageButton) findViewById(R.id.leftTackImageButton);
         ImageButton leftImageButton = (ImageButton) findViewById(R.id.leftImageButton);
-        ImageButton rightOffImageButton = (ImageButton) findViewById(R.id.rightOffImageButton);
         ImageButton rightTackImageButton = (ImageButton) findViewById(R.id.rightTackImageButton);
         ImageButton rightImageButton = (ImageButton) findViewById(R.id.rightImageButton);
         ImageButton settings = (ImageButton) findViewById(R.id.settings);
@@ -129,15 +127,9 @@ public class MainActivity extends AppCompatActivity{
 
         tack.setVisibility(View.INVISIBLE);
         followBtn.setVisibility(View.INVISIBLE);
-
         leftTackImageButton.setVisibility(View.INVISIBLE);
-
-        leftOffImageButton.setVisibility(View.INVISIBLE);
         leftImageButton.setVisibility(View.VISIBLE);
-
         rightTackImageButton.setVisibility(View.INVISIBLE);
-
-        rightOffImageButton.setVisibility(View.INVISIBLE);
         rightImageButton.setVisibility(View.VISIBLE);
 
         settings.setOnClickListener(new View.OnClickListener() {
@@ -158,12 +150,8 @@ public class MainActivity extends AppCompatActivity{
                     statusTextView.setText("auto");
                     playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);
 
-                    leftOffImageButton.setVisibility(View.INVISIBLE);
                     leftImageButton.setVisibility(View.VISIBLE);
-
-                    rightOffImageButton.setVisibility(View.INVISIBLE);
                     rightImageButton.setVisibility(View.VISIBLE);
-
                     leftTackImageButton.setVisibility(View.INVISIBLE);
                     rightTackImageButton.setVisibility(View.INVISIBLE);
 
@@ -173,12 +161,8 @@ public class MainActivity extends AppCompatActivity{
                     statusTextView.setText("ready to tack");
                     playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);
 
-                    leftOffImageButton.setVisibility(View.INVISIBLE);
                     leftImageButton.setVisibility(View.INVISIBLE);
-
-                    rightOffImageButton.setVisibility(View.INVISIBLE);
                     rightImageButton.setVisibility(View.INVISIBLE);
-
                     leftTackImageButton.setVisibility(View.VISIBLE);
                     rightTackImageButton.setVisibility(View.VISIBLE);
                 }
@@ -213,13 +197,8 @@ public class MainActivity extends AppCompatActivity{
                             public void run() {
 
                                 leftTackImageButton.setVisibility(View.INVISIBLE);
-
-                                leftOffImageButton.setVisibility(View.INVISIBLE);
                                 leftImageButton.setVisibility(View.VISIBLE);
-
                                 rightTackImageButton.setVisibility(View.INVISIBLE);
-
-                                rightOffImageButton.setVisibility(View.INVISIBLE);
                                 rightImageButton.setVisibility(View.VISIBLE);
 
                                 statusTextView.setBackgroundResource(R.drawable.status_on);
@@ -264,13 +243,8 @@ public class MainActivity extends AppCompatActivity{
                             @Override
                             public void run() {
                                 leftTackImageButton.setVisibility(View.INVISIBLE);
-
-                                leftOffImageButton.setVisibility(View.INVISIBLE);
                                 leftImageButton.setVisibility(View.VISIBLE);
-
                                 rightTackImageButton.setVisibility(View.INVISIBLE);
-
-                                rightOffImageButton.setVisibility(View.INVISIBLE);
                                 rightImageButton.setVisibility(View.VISIBLE);
 
                                 statusTextView.setBackgroundResource(R.drawable.status_on);
@@ -296,11 +270,8 @@ public class MainActivity extends AppCompatActivity{
 
                 if (status=="standby"){
                     leftTackImageButton.setVisibility(View.INVISIBLE);
-                    leftOffImageButton.setVisibility(View.INVISIBLE);
                     leftImageButton.setVisibility(View.VISIBLE);
-
                     rightTackImageButton.setVisibility(View.INVISIBLE);
-                    rightOffImageButton.setVisibility(View.INVISIBLE);
                     rightImageButton.setVisibility(View.VISIBLE);
 
                     //auto
@@ -318,11 +289,8 @@ public class MainActivity extends AppCompatActivity{
 
                 } else if (status=="auto"){
                     leftTackImageButton.setVisibility(View.INVISIBLE);
-                    leftOffImageButton.setVisibility(View.INVISIBLE);
                     leftImageButton.setVisibility(View.VISIBLE);
-
                     rightTackImageButton.setVisibility(View.INVISIBLE);
-                    rightOffImageButton.setVisibility(View.INVISIBLE);
                     rightImageButton.setVisibility(View.VISIBLE);
 
                     //standby
@@ -349,10 +317,8 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 String ts = Utils.getCurrentLocalTimeStamp();
-                leftOffImageButton.setVisibility(View.INVISIBLE);
                 leftImageButton.setVisibility(View.VISIBLE);
                 leftTackImageButton.setVisibility(View.VISIBLE);
-                rightOffImageButton.setVisibility(View.INVISIBLE);
                 rightImageButton.setVisibility(View.VISIBLE);
                 rightTackImageButton.setVisibility(View.VISIBLE);
 
