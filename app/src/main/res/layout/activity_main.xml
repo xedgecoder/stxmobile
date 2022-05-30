@@ -211,6 +211,16 @@
             app:layout_constraintTop_toBottomOf="@+id/distanceImageView" />
 
         <ImageButton
+            android:id="@+id/leftOffImageButton"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/left"
+            app:layout_constraintEnd_toStartOf="@+id/followBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
+
+        <ImageButton
             android:id="@+id/leftTackImageButton"
             android:layout_width="95dp"
             android:layout_height="95dp"
@@ -230,6 +240,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_compass" />
 
+        <ImageButton
+            android:id="@+id/rightOffImageButton"
+            android:layout_width="95dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/followBtn"
+            app:layout_constraintTop_toBottomOf="@+id/img_compass" />
 
         <ImageButton
             android:id="@+id/rightTackImageButton"

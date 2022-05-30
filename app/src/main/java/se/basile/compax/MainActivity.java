@@ -117,8 +117,10 @@ public class MainActivity extends AppCompatActivity{
         ImageButton followBtn =  (ImageButton) findViewById(R.id.followBtn);
         ImageButton followOffBtn =  (ImageButton) findViewById(R.id.followBtn);
         ImageButton autoBtn =  (ImageButton) findViewById(R.id.autoBtn);
+        ImageButton leftOffImageButton = (ImageButton) findViewById(R.id.leftOffImageButton);
         ImageButton leftTackImageButton = (ImageButton) findViewById(R.id.leftTackImageButton);
         ImageButton leftImageButton = (ImageButton) findViewById(R.id.leftImageButton);
+        ImageButton rightOffImageButton = (ImageButton) findViewById(R.id.rightOffImageButton);
         ImageButton rightTackImageButton = (ImageButton) findViewById(R.id.rightTackImageButton);
         ImageButton rightImageButton = (ImageButton) findViewById(R.id.rightImageButton);
         ImageButton settings = (ImageButton) findViewById(R.id.settings);
@@ -127,10 +129,14 @@ public class MainActivity extends AppCompatActivity{
 
         tack.setVisibility(View.INVISIBLE);
         followBtn.setVisibility(View.INVISIBLE);
+
+        leftOffImageButton.setVisibility(View.VISIBLE);
         leftTackImageButton.setVisibility(View.INVISIBLE);
-        leftImageButton.setVisibility(View.VISIBLE);
+        leftImageButton.setVisibility(View.INVISIBLE);
+
+        rightOffImageButton.setVisibility(View.VISIBLE);
         rightTackImageButton.setVisibility(View.INVISIBLE);
-        rightImageButton.setVisibility(View.VISIBLE);
+        rightImageButton.setVisibility(View.INVISIBLE);
 
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,8 +202,11 @@ public class MainActivity extends AppCompatActivity{
                             @Override
                             public void run() {
 
+                                leftOffImageButton.setVisibility(View.INVISIBLE);
                                 leftTackImageButton.setVisibility(View.INVISIBLE);
                                 leftImageButton.setVisibility(View.VISIBLE);
+
+                                rightOffImageButton.setVisibility(View.INVISIBLE);
                                 rightTackImageButton.setVisibility(View.INVISIBLE);
                                 rightImageButton.setVisibility(View.VISIBLE);
 
@@ -242,8 +251,11 @@ public class MainActivity extends AppCompatActivity{
                         new Handler().postDelayed(new Runnable(){
                             @Override
                             public void run() {
+                                leftOffImageButton.setVisibility(View.INVISIBLE);
                                 leftTackImageButton.setVisibility(View.INVISIBLE);
                                 leftImageButton.setVisibility(View.VISIBLE);
+
+                                rightOffImageButton.setVisibility(View.INVISIBLE);
                                 rightTackImageButton.setVisibility(View.INVISIBLE);
                                 rightImageButton.setVisibility(View.VISIBLE);
 
@@ -269,8 +281,11 @@ public class MainActivity extends AppCompatActivity{
                 String ts = Utils.getCurrentLocalTimeStamp();
 
                 if (status=="standby"){
+                    leftOffImageButton.setVisibility(View.INVISIBLE);
                     leftTackImageButton.setVisibility(View.INVISIBLE);
                     leftImageButton.setVisibility(View.VISIBLE);
+
+                    rightOffImageButton.setVisibility(View.INVISIBLE);
                     rightTackImageButton.setVisibility(View.INVISIBLE);
                     rightImageButton.setVisibility(View.VISIBLE);
 
@@ -288,11 +303,13 @@ public class MainActivity extends AppCompatActivity{
                     status = "auto";
 
                 } else if (status=="auto"){
+                    leftOffImageButton.setVisibility(View.VISIBLE);
                     leftTackImageButton.setVisibility(View.INVISIBLE);
-                    leftImageButton.setVisibility(View.VISIBLE);
-                    rightTackImageButton.setVisibility(View.INVISIBLE);
-                    rightImageButton.setVisibility(View.VISIBLE);
+                    leftImageButton.setVisibility(View.INVISIBLE);
 
+                    rightOffImageButton.setVisibility(View.VISIBLE);
+                    rightTackImageButton.setVisibility(View.INVISIBLE);
+                    rightImageButton.setVisibility(View.INVISIBLE);
                     //standby
                     String msg = getResources().getString(R.string.Standby);
                     new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
@@ -307,7 +324,7 @@ public class MainActivity extends AppCompatActivity{
 
                 }
 
-                Log.d("COMPAX", ts+" auto pressed");
+                Log.d("STX", ts+" auto pressed");
 
                 playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
             }
@@ -342,8 +359,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-
-        leftImageButton.setOnTouchListener(new View.OnTouchListener() {
+        leftOffImageButton.setOnTouchListener(new View.OnTouchListener() {
 
             private Handler mHandler;
 
@@ -355,6 +371,8 @@ public class MainActivity extends AppCompatActivity{
                         String ts = Utils.getCurrentLocalTimeStamp();
                         // -1
                         String msg = getResources().getString(R.string.minus1);
+                        Log.d("STX", " -1 pressed");
+
                         new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
                         sentencesDB.parse(msg);
 
@@ -376,6 +394,8 @@ public class MainActivity extends AppCompatActivity{
 
                     // -10
                     String msg = getResources().getString(R.string.minus10);
+                    Log.d("STX", " -10 pressed");
+
                     new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
                     sentencesDB.parse(msg);
 
@@ -388,7 +408,58 @@ public class MainActivity extends AppCompatActivity{
 
         });
 
-        rightImageButton.setOnTouchListener(new View.OnTouchListener() {
+
+        leftImageButton.setOnTouchListener(new View.OnTouchListener() {
+
+            private Handler mHandler;
+
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (mHandler != null) return true;
+                        mHandler = new Handler();
+                        String ts = Utils.getCurrentLocalTimeStamp();
+                        // -1 in Auto
+                        String msg = getResources().getString(R.string.minus1Auto);
+                        Log.d("STX", " -1 in Auto pressed");
+
+                        new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
+                        sentencesDB.parse(msg);
+
+                        playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
+                        mHandler.postDelayed(mAction, 1000);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        break;
+                }
+                return false;
+            }
+
+            Runnable mAction = new Runnable() {
+                @Override public void run() {
+                    String ts = Utils.getCurrentLocalTimeStamp();
+
+                    // -10 in Auto
+                    String msg = getResources().getString(R.string.minus10Auto);
+                    Log.d("STX", " -10 in Auto pressed");
+
+                    new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
+                    sentencesDB.parse(msg);
+
+                    playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
+                    SystemClock.sleep(300);
+                    playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
+                    mHandler.postDelayed(this, 1000);
+                }
+            };
+
+        });
+
+
+        rightOffImageButton.setOnTouchListener(new View.OnTouchListener() {
 
             private Handler mHandler;
 
@@ -401,6 +472,8 @@ public class MainActivity extends AppCompatActivity{
 
                         // +1
                         String msg = getResources().getString(R.string.plus1);
+                        Log.d("STX", " +1 pressed");
+
                         new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
                         sentencesDB.parse(msg);
 
@@ -423,6 +496,60 @@ public class MainActivity extends AppCompatActivity{
 
                     // +10
                     String msg = getResources().getString(R.string.plus10);
+                    Log.d("STX", " +10  pressed");
+
+                    new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
+                    sentencesDB.parse(msg);
+
+                    playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
+                    SystemClock.sleep(300);
+                    playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
+                    mHandler.postDelayed(this, 1000);
+                }
+            };
+
+        });
+
+
+        rightImageButton.setOnTouchListener(new View.OnTouchListener() {
+
+            private Handler mHandler;
+
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (mHandler != null) return true;
+                        mHandler = new Handler();
+                        String ts = Utils.getCurrentLocalTimeStamp();
+
+                        // +1 in Auto
+                        String msg = getResources().getString(R.string.plus1Auto);
+                        Log.d("STX", " +1 in Auto pressed");
+
+                        new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
+                        sentencesDB.parse(msg);
+
+                        playBeepAndshake(ToneGenerator.TONE_CDMA_DIAL_TONE_LITE, 150);;
+
+                        mHandler.postDelayed(mAction, 1000);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        break;
+                }
+                return false;
+            }
+
+            Runnable mAction = new Runnable() {
+                @Override public void run() {
+                    String ts = Utils.getCurrentLocalTimeStamp();
+
+                    // +10 in Auto
+                    String msg = getResources().getString(R.string.plus10Auto);
+                    Log.d("STX", " +10 in Auto pressed");
+
                     new Thread(new MsgSender(settingsAssest.get("serverIP"), settingsAssest.get("serverRxPort"), msg)).start();
                     sentencesDB.parse(msg);
 
